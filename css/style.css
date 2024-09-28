@@ -14,7 +14,6 @@ body {
 header {
   background-color: #fff;
   padding: 10px 25px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -30,6 +29,7 @@ img{
 nav{
   display: flex;
   justify-content:space-between;
+  align-items: center;
 }
 
 ul li{
@@ -52,27 +52,23 @@ a:active{
   color: #2DD6C1;
 }
 
-.btn-blue {
-  background-color: #496BF1;
-  color: white;
-  width: 150px;
-  height: 50px;
+.btn{
+  padding: 10px 20px;
   border: none;
   border-radius: 3px;
   font-size: 18px;
+  height: 40px;
+  color: white;
+}
+.btn-blue {
+  background-color: #496BF1;
 }
 
 .btn-green {
   background-color: #2DD6C1;
-  color: white;
-  width: 200px;
-  height: 50px;
-  border: none;
-  border-radius: 3px;
   margin-left: 20px;
-  font-size: 18px;
-
 }
+
 
 .top-section {
   background-image: url("../images/hero-section-bg.png");
@@ -80,7 +76,7 @@ a:active{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-left: 70%;
+  padding-left: 53%;
   max-height: max-content;
 }
 
@@ -116,7 +112,7 @@ a:active{
   flex-direction: column;
   align-items: center; 
   justify-content: space-evenly;
-  max-width: 25%;
+  max-width: 20%;
   }
 
 
@@ -131,12 +127,16 @@ a:active{
   font-size: 1.4rem;
   margin-bottom: 10px;
   color: #333333; 
+  text-align: center;
+
 }
 
 /* Paragraph Styling */
 .box p {
   font-size: 1rem;
   line-height: 1.5;
+  text-align: center;
+
 }
 
 
@@ -199,10 +199,15 @@ a:active{
 .clients{
   text-align: center;
   padding: auto;
-  max-width: 900px;
   margin: 10px auto;
   border-radius: 10px;
  
+}
+
+.clients blockquote {
+  width: 570px;
+  text-align: left;
+  margin: 4rem auto;
 }
 
 .clients h2:first-child{
@@ -218,12 +223,11 @@ a:active{
 .clients img:nth-of-type(2){
   width: 10%;
   height: auto;
-  align-self: baseline;
 }
 
 blockquote {
   font-size: 1.2em;
-  margin: 30px 0;
+  margin: 30px 10px;
   position: relative;
 }
 
@@ -275,13 +279,13 @@ cite {
   background-position: center center;
   background-size: cover;
   background-image: url("../images/contact-section-bg.png");
-  height: 75vh;
-  padding: 10px;
+  height: 72vh;
+  padding-left: 30px;
 }
 
 .conta h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   padding-top: 2em;
 }
 
@@ -292,57 +296,49 @@ span:first-child{
 span:last-child{
   color:  #496BF1;
 }
-.contact-us h1::before{
-position: absolute;
-}
 
 .contact-us form{
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
   text-align: right 10px; 
-  max-width: 50vh;
+  max-width: 40vh;
   font-size: 18px;
   
 }
 
 .contact-us form input, textarea{
   border: none;
-  gap: 1em;
   margin-top: 20px;
   height: 50px;
+  width: 60vh;
   text-align: left;
   padding: 10px;
 }
 
 .contact-us  textarea{
-  height: 100px;
+  height: 150px;
   resize: none;
   text-align: left;
 }
 
-footer{
+.conta input[type="submit"]{
+  width: 120px;
+  text-align: center;
+  height: auto;
+}
+
+.footer{
   display: flex;
-  justify-content: space-between;
   line-height: 1.6;
+  justify-content: space-between;
 }
 
 .footer .log{
-  display: flex;
-  flex-direction: flex-start; 
-  justify-content: space-evenly;
   margin: 10px;
-
 }
 
-footer .social-media{
-  flex-direction: column;
-  padding-left: 100px;
-  margin-left: -37em;
-  padding-top: 75px;
-}
-
-footer li img{
+.footer li img{
   height: 25px;
   width: 25px;
   margin-right: 8px;
@@ -350,8 +346,66 @@ footer li img{
   margin-top: 10px;
 }
 
-footer .links, .departments, .com{
+.footer .links, .departments, .com{
   margin: 20px;
   padding: 5px;
   
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+      flex-direction: column;
+  }
+
+  .flex {
+      flex-direction: column;
+      padding: 30px 0;
+  }
+
+  .flex .box {
+      margin: 20px 0;
+  }
+
+  .clients img {
+      max-width: 80px;
+  }
+
+  .about-content h1 {
+      font-size: 1.5rem;
+  }
+
+  .footer {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 375px) {
+  header nav ul p  input{
+      font-size: 10px;
+      word-wrap: break-word;
+      width: 100%;
+
+  }
+
+  body{
+    background-size: cover;
+    background-position: center;
+  }
+
+  .top-section h1 {
+      font-size: 1.8rem;
+  }
+
+  .clients h2 {
+      font-size: 1.5rem;
+  }
+
+  .contact-us form input,
+  .contact-us form textarea {
+      padding: 10px;
+  }
+
+  .footer {
+      text-align: left;
+  }
 }
